@@ -37,3 +37,5 @@ Shortly after the initial data collection, the pipeline was modified to the foll
 ![new-arq](../img/new-arq.png)
 
 The only modification made was in relation to data collection. Instead of always collecting the last 3 months, it only collects the last month. The entire validation and persistence process remains the same.
+
+You can find the whole code [here!](https://github.com/sarahmbss/pipeline)

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sentiment Analyses of the Brazilian Elections
+title: Sentiment Analysis of the Brazilian Elections
 subtitle: Analysis of sentiments expressed on Twitter in relation to the presidential election candidates of 2022
 tags: [data-science, python]
 author: Sarah Silva

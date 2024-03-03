@@ -32,8 +32,8 @@ choco install kubens
 Chocolatey aims to automate the entire software lifecycle from install through upgrade and removal on Windows operating systems.
 
 **How to install**
->> Open Windows Powershell as an administrator
->> Type the command: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+> 1. Open Windows Powershell as an administrator
+> 2. Type the command: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 ### Helm package
 

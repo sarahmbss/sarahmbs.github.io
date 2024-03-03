@@ -188,9 +188,51 @@ The initial date of collection was 01/06/2022, and the end 01/10/2022, 1 day bef
 The table below shows the confusion matrix obtained for the model built with the
 SVM classifier. It is possible to see that the main flaw of the model was the recognition of neutral classes as negative. However, overall the classifier obtained 52% of accuracy.
 
-|     | Sentiment | Number of tweets | 
-|     | :------ |:--- | :--- |
-|Real | Positive | 320 |
-|     | Neutral | 297 |
-|     | Negative | 383 |
-|     | Total | 1000 |
+|               | Classified as Positive    | Classified as Neutral | Classified as Negative    |  Total    | 
+| :------       |:---                       | :---                  | :---                      | :---      |
+| Real Positive | 131 (44%)                 | 76 (26%)              | 90 (30%)                  | 297       |
+| Real Neutral  | 44 (14%)                  | 126 (43%)             | 126 (43%)                 | 296       |
+| Real Negative | 29 (10%)                  | 71 (24%)              | 197 (66%)                 | 297       |
+| Total         | 204                       | 273                   | 413                       | 890       |
+
+The next table shows the confusion matrix obtained for the model constructed
+with the Naive Bayes classifier. In this case, it is possible to see that the model built
+had difficulty learning neutral classes, as he was unable to predict most of the
+instances of this class correctly. For this reason, the model predicted 50% of total instances
+correctly.
+
+|               | Classified as Positive    | Classified as Neutral | Classified as Negative    |  Total    | 
+| :------       |:---                       | :---                  | :---                      | :---      |
+| Real Positive | 192 (65%)                 | 55 (19%)              | 50 (16%)                  | 297       |
+| Real Neutral  | 112 (38%)                 | 92 (31%)              | 92 (31%)                  | 296       |
+| Real Negative | 90 (30%)                  | 46 (15%)              | 161 (55%)                 | 297       |
+| Total         | 394                       | 193                   | 303                       | 890       |
+
+In addition to the confusion matrix, the accuracy, precision and recall measures of each classifier were evaluated, with the results described on the next table.
+
+|  | Naive Bayes | SVM |
+| :------ |:--- | :--- |
+| Accuracy | 50% | 52% |
+| Precision | 51% | 54% |
+| Recall | 50% | 51% |
+
+Therefore, after analyzing all of the models and their results, I decided to use the SVM.
+
+## Results obtained with the SVM classification
+
+After choosing and training the classifier, it was possible to classify the entire database
+of each candidate, and thus analyze the popularity of each one on Twitter. It is important to highlight that for candidate approval analyses, tweets classified as neutral were removed, as they do not add to the distinction of what is support or
+rejection of candidates.
+
+The graphic below shows the overview of the classification. It is possible to see the prominence that candidates Ciro Gomes and Felipe d’Avila had on social networks, obtaining the highest approval rates of the candidates analyzed. On the other hand, Simone Tebet, Jair Bolsonaro and Lula had the lowest approval rates respectively.
+
+![results](../img/results.png)
+
+But, as shown on the next graphic, the result of the election vs the predicted on this project shows some differences.
+
+![results-vs-real](<../img/results vs real.png>)
+
+Based on the experiment carried out, it was possible to conclude that there were no similarities between the candidate's popularity rate on the social network Twitter and their performance on the presidential election, with the exception of candidate Jair Bolsonaro's approval rate, as it was very close to its real percentage of votes. However, the two most commented candidates on Twitter were those who managed to advance to the second round.
+
+A possible explanation for this, is the great difference on the size of the data collected between the candidates. Candidate Felipe d’Avila, for example, despite having been the best evaluated, obtained 9,772 tweets collected, which represents only 0.001% of the total tweets
+collected. This could mean that despite being well evaluated by his audience, Felipe d’Avila is not well known by most Brazilians, directly impacting its performance in the election.

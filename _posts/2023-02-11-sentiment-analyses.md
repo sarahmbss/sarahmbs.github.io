@@ -183,4 +183,14 @@ The initial date of collection was 01/06/2022, and the end 01/10/2022, 1 day bef
 
 ![data-candidates](../img/data-candidates.png)
 
+## Classifiers evaluation
 
+The table below shows the confusion matrix obtained for the model built with the
+SVM classifier. It is possible to see that the main flaw of the model was the recognition of neutral classes as negative. However, overall the classifier obtained 52% of accuracy.
+
+|     | Sentiment | Number of tweets | 
+|     | :------ |:--- | :--- |
+|Real | Positive | 320 |
+|     | Neutral | 297 |
+|     | Negative | 383 |
+|     | Total | 1000 |

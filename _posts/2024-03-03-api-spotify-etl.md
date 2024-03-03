@@ -14,9 +14,9 @@ The main goal with this project is to collect personal data on Spotify - top tra
 
 In order to achieve this goal, I decided to deploy an instance of Airflow on Minikube, using the Helm package.
 
-## Preparing the environment 
+# Preparing the environment 
 
-### Minikube
+## Minikube
 First of all, I installed an instance of Minikube, with the Docker container.
 
 In order to work with k8s, I also installed kubctx and kubens as well, through a tool called **Chocolatey**.
@@ -28,14 +28,14 @@ choco install kubectlx
 choco install kubens
 ```
 
-### Chocolatey
+## Chocolatey
 Chocolatey aims to automate the entire software lifecycle from install through upgrade and removal on Windows operating systems.
 
 **How to install**
 > 1. Open Windows Powershell as an administrator
 > 2. Type the command: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-### Helm package
+## Helm package
 
 Helm helps you manage Kubernetes applications — Helm Charts help you define, install, and upgrade even the most complex Kubernetes application. This is exactly why I chose to download the Airflow on k8s using the package provided by Helm. To install it, I also used chocolatey:
 
@@ -75,7 +75,7 @@ gitSync:
     depth: 1
 ```
 
-As my git repository is public, I just changed the default one for mine. If I had a private one, I would have to create a file named encoding with git's name and token, and update yaml with the following command
+As my git repository is public, I just changed the default one for mine. If I had a private one, I would have to create a file named encoding with git's name and token, and update yaml with the following command:
 
 ```powershell
 kubectl apply -f git-secret.yaml -n airflow
@@ -103,3 +103,39 @@ After checking if all my pods were ok, I accessed the Airflow page:
 kubens airflow
 kubectl port-forward svc/airflow-webserver 8080:8080
 ```
+
+## Installing extra packages
+
+After the initial tests, I had to install extra packages (like the Spotify package) on Airflow. The recommended process, according to the [helm documentation](https://airflow.apache.org/docs/docker-stack/build.html), is to add an image on Docker, with the following Dockerfile:
+
+```Dockerfile
+FROM apache/airflow:2.8.1
+COPY requirements.txt .
+RUN pip install --no-cache-dir "apache-airflow==${AIRFLOW_VERSION}" -r requirements.txt
+```
+
+On requirements.txt, I added all of the packages I needed to run my DAGs sucessfully. After I pushed the image I created to Docker Hub, I had to alter values.yaml. The standard values.yaml comes with the default Airflow image. If we want to use our own image, we need to replace it with our repository and tag:
+
+```yaml
+images:
+  airflow:
+    repository: sarahmbs/airflow-packages
+    tag: latest
+    pullPolicy: Always
+```
+
+After that, I upgraded my namespace with the following command:
+
+```powershell
+helm upgrade airflow airflow --namespace airflow --values values.yaml
+```
+
+# Problems I faced
+
+## pendulum version
+
+The first tests I did was with Airflow 2.7.1. On this version, whenever I tried installing extra packages with the Dockerfile I created, the following error kept happening:
+
+*pendulum.tz.timezone("UTC") TypeError: 'module' object is not callable*
+
+After some research, I figured out that it was an Airflow version issue, that was solved on 2.8.1. So I had to change my Dockerfile from 2.7.1 to 2.8.1 in order to update the Airflow.

@@ -65,6 +65,16 @@ tar zxvf airflow-1.11.0.tgz
 
 So, everytime we install helm, it points to a file called values.yaml. On the case of the airflow, at the end of the file on the part of **gitSync**, it points directly to the git file of the own airflow. We need to alter that part, so that we can create our own DAGs.
 
+```yaml
+gitSync:
+    enabled: true
+    # changed this link to my own repository
+    repo: https://github.com/sarahmbss/api-spotify-elt.git
+    branch: main
+    rev: HEAD
+    depth: 1
+```
+
 As my git repository is public, I just changed the default one for mine. If I had a private one, I would have to create a file named encoding with git's name and token, and update yaml with the following command
 
 ```powershell

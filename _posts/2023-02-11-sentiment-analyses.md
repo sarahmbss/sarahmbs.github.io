@@ -234,3 +234,5 @@ Based on the experiment carried out, it was possible to conclude that there were
 
 A possible explanation for this, is the great difference on the size of the data collected between the candidates. Candidate Felipe d’Avila, for example, despite having been the best evaluated, obtained 9,772 tweets collected, which represents only 0.001% of the total tweets
 collected. This could mean that despite being well evaluated by his audience, Felipe d’Avila is not well known by most Brazilians, directly impacting its performance on the election.
+
+You can find the whole code on github [here!](https://github.com/sarahmbss/analise_de_sentimentos_eleicoes_2022)

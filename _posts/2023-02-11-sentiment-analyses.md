@@ -9,16 +9,15 @@ author: Sarah Silva
 # Objective
 This project aims to analyze feelings expressed by Twitter users in relation to
 candidates for the presidency of the 2022 election, with the aim of verifying whether the performance
-of candidates in the presidential election is related to their popularity on social networks
-social.
+of candidates in the presidential election is related to their popularity on social networks.
 
 # Model construction
 
 ## Data Extraction
 
 To collect data from the Twitter platform, the snscrape tool was used. It is
-available as a Python library, which allows you to extract tweets from a specific period with key words.
-On this study, the filtered locations were the capitals of the Brazilian states, as well as the capital of
+available as a Python library, which allows you to extract tweets from a specific period using key words.
+On this study, the filtered locations were the capitals of the Brazilian states, as well as the capital of the 
 country. The key-words used were the names of the candidates.
 
 ```python
@@ -69,10 +68,10 @@ necessary to build a base of labeled tweets, in order to obtain the training dat
 
 ## Preprocessing
 
-To the data cleaning, the following procedures were carried out:
+To clean the data, the following procedures were carried out:
 
-- Removal of special characters, hyperlinks, punctuation, markings
-users and accents: do not add value to the construction of the model;
+- **Removal of special characters, hyperlinks, punctuation, markings
+users and accents:** do not add value to the construction of the model;
 
 ```python
 for i in range(len(Corpus['content'])):

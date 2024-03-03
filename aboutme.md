@@ -1,16 +1,10 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Hi there! My name is Sarah, I'm 23 years old and I'm currently living on Uberlândia-MG.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+I have a degree on Information Management and during university I was able to discover my passion for innovation, technology and data, so that today I work as a Data Engineer!
 
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I'm passionate about yoga, books and writing, and on my free time you'll probably find me reading something, listening to music or watching series.

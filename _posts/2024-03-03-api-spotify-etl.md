@@ -153,3 +153,5 @@ minikube stop
 minikube delete
 minikube start --memory 7000 --cpus 4
 ```
+
+![memory](../img/memory-cpu-issue.png)

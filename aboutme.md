@@ -3,7 +3,7 @@ layout: page
 title: About me
 ---
 
-Hi there! My name is Sarah, I'm 23 years old and I'm currently living on Uberlândia-MG.
+Hi there! My name is Sarah, I'm 24 years old and I'm currently living in Brazil.
 
 I have a degree on Information Management and during university I was able to discover my passion for innovation, technology and data, so that today I work as a Data Engineer!
 

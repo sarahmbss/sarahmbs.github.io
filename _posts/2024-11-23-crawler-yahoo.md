@@ -6,8 +6,6 @@ tags: [crawler, python, selenium, logging]
 author: Sarah Silva
 --- 
 
-[IN PROGRESS]
-
 # Objective
 
 The main goal of this project was to extract the available Stocks from the Yahoo Finance Website. 
@@ -15,7 +13,7 @@ The main goal of this project was to extract the available Stocks from the Yahoo
 # Preparing the environment 
 
 ## Selenium
-In order to achieve the object, I used the Selenium framework, the most used one when we talk about web scrapping. Selenium is a free framework designed for automated testing of web applications via the browser. In addition to its use as a testing tool, it is widely used for collecting web data. It basically simulates user behavior on a web page.
+In order to achieve the objective, I used the Selenium framework, the most used one when we talk about web scrapping. Selenium is a free framework designed for automated testing of web applications via the browser. In addition to its use as a testing tool, it is widely used for collecting web data. It basically simulates user behavior on a web page.
 
 The webdriver class is what allows us to simulate this behavior, as it is an interface to write instruction sets that can be run interchangeably in many browsers. The Options class can be used with the webdriver one to set specific configurations like log level, headless, cookies and so on.
 

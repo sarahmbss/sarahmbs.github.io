@@ -139,3 +139,19 @@ The first tests I did was with Airflow 2.7.1. On this version, whenever I tried 
 *pendulum.tz.timezone("UTC") TypeError: 'module' object is not callable*
 
 After some research, I figured out that it was an Airflow version issue, that was solved on 2.8.1. So I had to change my Dockerfile from 2.7.1 to 2.8.1 in order to update the Airflow.
+
+## memory allocation
+
+After I uploaded my first real DAG, whenever the website worker was initiallizing, it kept getting this error:
+
+*Received signal: 15. Closing gunicorn*
+
+After concluding that it might have been a memory issue, I had to increase both memory and CPU for my minikube cluster. The default value was 2GB for memory and 2CPUs. With the following command, I increased it to 7GB and 4CPUs and then the problem was solved and I was able to access again the webserver normally.
+
+```powershell
+minikube stop
+minikube delete
+minikube start --memory 7000 --cpus 4
+```
+
+![memory](../img/memory-cpu-issue.png)

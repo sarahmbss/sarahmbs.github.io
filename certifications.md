@@ -4,6 +4,12 @@ title: Certifications
 subtitle: Workshops I participated and certifications I own
 ---
 
+Associate Cloud Engineer Certification
+
+**Organization:** Google Cloud
+
+![gcp-cert](img/gcp-cert.png)
+
 CRASH-COURSE - Big Data on GCP
 
 **Organization:** Engenharia de Dados Academy

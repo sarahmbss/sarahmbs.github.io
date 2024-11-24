@@ -6,7 +6,7 @@ tags: [gcp, big-query, python, composer, sql]
 author: Sarah Silva
 --- 
 
-The main object of this project was to collect data from an API, store it on a database so that we could perfom a couple of queries on them.
+The main object of this project was to collect data from an API, store it on a database so that we could perform a couple of queries on them.
 
 To solve this issue, the following architecture was implemented initially: 
 

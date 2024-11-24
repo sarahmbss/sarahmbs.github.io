@@ -1,19 +1,17 @@
 ---
 layout: post
 title: Crawler Finance Yahoo
-subtitle: This crawler was built with the objective of getting the Stocks from a specific region
+subtitle: Extracting available stocks of a desired region
 tags: [crawler, python, selenium, logging]
 author: Sarah Silva
 --- 
 
-# Objective
-
-The main goal of this project was to extract the available Stocks from the Yahoo Finance Website. 
+The main goal of this project was to extract the available Stocks of a desired region. The website used was the [Yahoo Finance](https://finance.yahoo.com/screener/new). 
 
 # Preparing the environment 
 
 ## Selenium
-In order to achieve the objective, I used the Selenium framework, the most used one when we talk about web scrapping. Selenium is a free framework designed for automated testing of web applications via the browser. In addition to its use as a testing tool, it is widely used for collecting web data. It basically simulates user behavior on a web page.
+In order to extract the stocks, I used the Selenium framework, the most used one when we talk about web scrapping. Selenium is a free framework designed for automated testing of web applications via the browser. In addition to its use as a testing tool, it is widely used for collecting web data. It basically simulates user behavior on a web page.
 
 The webdriver class is what allows us to simulate this behavior, as it is an interface to write instruction sets that can be run interchangeably in many browsers. The Options class can be used with the webdriver one to set specific configurations like log level, headless, cookies and so on.
 

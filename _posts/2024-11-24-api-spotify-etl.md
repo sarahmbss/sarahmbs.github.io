@@ -130,6 +130,24 @@ After that, I upgraded my namespace with the following command:
 helm upgrade airflow airflow --namespace airflow --values values.yaml
 ```
 
+## Adding secret variables to cluster
+
+In case you want to store sensitive information like I did, such as database username and password, you can use Kubernetes Secret:
+
+```powershell
+kubectl create secret generic client-id --from-literal=CLIENT_ID=xxxxxx -namespace airflow
+```
+
+After that, add this information to values.yaml
+
+```yaml
+# Secrets for all airflow containers
+secret: 
+  - envName: "CLIENT_ID_ENV"
+   secretName: "client-id"
+   secretKey: "CLIENT_ID"
+```
+
 # Problems I faced
 
 ## pendulum version
@@ -155,3 +173,14 @@ minikube start --memory 7000 --cpus 4
 ```
 
 ![memory](../img/memory-cpu-issue.png)
+
+## Debugging each pod
+
+Sometimes, an error would occur in some specific pods. In order to understand what was happening, I used this command:
+
+```powershell
+kubectl describe -n airflow pod airflow-triggerer-0
+```
+
+It generates a detailed information of the pod and the list of events that happened during its creation. It can be very usefull when debugging values.yaml.
+![event-pod](../img/events-pod.png)

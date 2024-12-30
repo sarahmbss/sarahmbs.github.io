@@ -174,7 +174,7 @@ minikube start --memory 7000 --cpus 4
 
 ![memory](../img/memory-cpu-issue.png)
 
-## Debugging each pod
+## debugging each pod
 
 Sometimes, an error would occur in some specific pods. In order to understand what was happening, I used this command:
 
